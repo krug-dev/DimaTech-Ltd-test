@@ -5,7 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers import users, admins, payments
 from app.database.connection import engine, Base
 from app.exceptions import AppException, http_exception_from_app_exception
-from app.config import settings
+from app.config import get_settings
+
+settings = get_settings()
 
 
 @asynccontextmanager
